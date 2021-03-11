@@ -1,0 +1,36 @@
+
+inoremap jk <Esc>
+imap <C-g> <Esc>
+
+nmap <left> <C-w>h
+nmap <Right> <C-w>l
+nmap <Down> <C-w>j
+nmap <Up> <C-w>k
+
+nmap U <Action>($Redo)
+nmap <C-s> <Action>(SaveDocument)
+nmap <C-p> <Action>(GotoClass)
+
+nmap <A-z> <Action>(Back)
+nmap <A-x> <Action>(Forward)
+nmap <A-m> <Action>(FileStructurePopup)
+nmap <A-s> <Action>(GotoSymbol)
+nmap <A-f> <Action>(GotoFile)
+nmap <A-d> <Action>(GotoDeclaration)
+nmap <A-g> <Action>(GotoDeclaration)
+
+nmap ,cc <Action>(CommentByLineComment)
+vmap ,cc <Action>(CommentByLineComment)
+
+nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
+nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
+
+nmap ,f <Action>(FindUsages)
+
+nmap ,z <Action>(Switcher)
+
+nmap ,l <action>(SwitchHeaderSource)
+
+set ignorecase smartcase
+set visualbell
+set noerrorbells
