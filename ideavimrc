@@ -2,11 +2,6 @@
 inoremap jk <Esc>
 imap <C-g> <Esc>
 
-nmap <A-left> <C-w>h
-nmap <A-Right> <C-w>l
-nmap <A-Down> <C-w>j
-nmap <A-Up> <C-w>k
-
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
