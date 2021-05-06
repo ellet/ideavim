@@ -1,5 +1,6 @@
 
 inoremap jk <Esc>
+
 imap <C-g> <Esc>
 
 nmap U <Action>($Redo)
@@ -21,6 +22,7 @@ nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
 nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
 
 nmap ,f <Action>(FindUsages)
+nmap ,G <Action>(Generate)
 
 nmap ,z <Action>(Switcher)
 
