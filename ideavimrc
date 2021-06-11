@@ -3,12 +3,18 @@ inoremap jk <Esc>
 
 imap <C-g> <Esc>
 
+sethandler <A-v> a:vim
+sethandler <A-b> a:vim
+
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
+nmap <A-v> <Action>(GotoPreviousError)
+nmap <A-b> <Action>(GotoNextError)
+
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
 nmap <A-f> <Action>(GotoFile)
@@ -18,8 +24,13 @@ nmap <A-g> <Action>(GotoDeclaration)
 nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 
+nmap ,e <Action>(PerforceDirect.Edit)
+
 nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
 nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
+
+nmap ,Q <Action>(Debug)
+nmap ,W <Action>(CancelAllBuildActions)
 
 nmap ,f <Action>(FindUsages)
 nmap ,G <Action>(Generate)
@@ -31,3 +42,4 @@ nmap ,l <action>(SwitchHeaderSource)
 set ignorecase smartcase
 set visualbell
 set noerrorbells
+set incsearch
