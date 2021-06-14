@@ -21,6 +21,8 @@ nmap <A-f> <Action>(GotoFile)
 nmap <A-d> <Action>(GotoDeclaration)
 nmap <A-g> <Action>(GotoDeclaration)
 
+nmap <A-i> <Action>(AutoIndentLines)
+
 nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 
