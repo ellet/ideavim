@@ -3,19 +3,21 @@ inoremap jk <Esc>
 
 imap <C-g> <Esc>
 
-
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
+
+"Make sure these are handled by VIM and not the editor
+sethandler <A-v> a:vim
+sethandler <A-b> a:vim
+sethandler <A-n> a:vim
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
 nmap <A-v> <Action>(GotoPreviousError)
 nmap <A-b> <Action>(GotoNextError)
 
-"Make sure these are handled by VIM and not the editor
-sethandler <A-v> a:vim
-sethandler <A-b> a:vim
+nmap <A-n> `
 
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
