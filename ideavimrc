@@ -11,6 +11,7 @@ nmap <C-p> <Action>(GotoClass)
 sethandler <A-v> a:vim
 sethandler <A-b> a:vim
 sethandler <A-n> a:vim
+sethandler <C-k> a:vim
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
@@ -44,6 +45,20 @@ nmap ,G <Action>(Generate)
 nmap ,z <Action>(Switcher)
 
 nmap ,l <action>(SwitchHeaderSource)
+
+"--- MacroStart ---
+"Replace current word with paste buffer.
+nnoremap S "_diwP
+
+"Copy to clipboard
+nnoremap <F4> "+yiw
+vnoremap <F4> "+y
+
+"TODO: Make a replace regex using last deleted word
+
+"--- MacroEnd ---
+
+set NERDTree
 
 set ignorecase smartcase
 set visualbell
