@@ -11,7 +11,10 @@ nmap <C-p> <Action>(GotoClass)
 sethandler <A-v> a:vim
 sethandler <A-b> a:vim
 sethandler <A-n> a:vim
+sethandler <A-p> a:vim
+sethandler <A-T> a:vim
 sethandler <C-k> a:vim
+sethandler <C-A> a:vim
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
@@ -19,6 +22,7 @@ nmap <A-v> <Action>(GotoPreviousError)
 nmap <A-b> <Action>(GotoNextError)
 
 nmap <A-n> `
+nmap <A-p> `
 
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
@@ -50,6 +54,10 @@ nmap ,l <action>(SwitchHeaderSource)
 "Replace current word with paste buffer.
 nnoremap S "_diwP
 
+nmap <A-Y> mT
+nmap <A-T> mY'T
+nmap <A-A> 'Y
+
 "Copy to clipboard
 nnoremap <F4> "+yiw
 vnoremap <F4> "+y
@@ -59,6 +67,7 @@ vnoremap <F4> "+y
 "--- MacroEnd ---
 
 set NERDTree
+set surround
 
 set ignorecase smartcase
 set visualbell
