@@ -13,6 +13,8 @@ sethandler <A-b> a:vim
 sethandler <A-n> a:vim
 sethandler <A-p> a:vim
 sethandler <A-T> a:vim
+sethandler <A-R> a:vim
+sethandler <A-P> a:vim
 sethandler <C-k> a:vim
 sethandler <C-A> a:vim
 
@@ -56,7 +58,14 @@ nnoremap S "_diwP
 
 nmap <A-Y> mT
 nmap <A-T> mY'T
-nmap <A-A> 'Y
+nmap <A-R> 'Y
+
+"Paste latest yank (0 buffer doesn't get overwritten by a delete)
+nmap <A-P> "0p
+
+"Replace block with 0 buffer
+nmap ,rb dib"0P
+nmap ,rB dibb"0p
 
 "Copy to clipboard
 nnoremap <F4> "+yiw
