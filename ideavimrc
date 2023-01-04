@@ -1,12 +1,4 @@
 
-inoremap jk <Esc>
-
-imap <C-g> <Esc>
-
-nmap U <Action>($Redo)
-nmap <C-s> <Action>(SaveDocument)
-nmap <C-p> <Action>(GotoClass)
-
 "Make sure these are handled by VIM and not the editor
 sethandler <A-v> a:vim
 sethandler <A-b> a:vim
@@ -17,6 +9,15 @@ sethandler <A-R> a:vim
 sethandler <A-P> a:vim
 sethandler <C-k> a:vim
 sethandler <C-A> a:vim
+sethandler <C-S-f> a:vim
+
+inoremap jk <Esc>
+nmap U <Action>($Redo)
+
+imap <C-g> <Esc>
+nmap <C-s> <Action>(SaveDocument)
+nmap <C-p> <Action>(GotoClass)
+nmap <C-S-f> <Action>(Find)
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
@@ -34,20 +35,19 @@ nmap <A-g> <Action>(GotoDeclaration)
 
 nmap <A-i> <Action>(AutoIndentLines)
 
+nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
+nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
+
 nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 
 nmap ,e <Action>(PerforceDirect.Edit)
-
-nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
-nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
-
 nmap ,Q <Action>(Debug)
 nmap ,W <Action>(CancelAllBuildActions)
 
 nmap ,f <Action>(FindUsages)
-nmap ,G <Action>(Generate)
 
+nmap ,G <Action>(Generate)
 nmap ,z <Action>(Switcher)
 
 nmap ,l <action>(SwitchHeaderSource)
