@@ -17,7 +17,8 @@ nmap U <Action>($Redo)
 imap <C-g> <Esc>
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
-nmap <C-S-f> <Action>(Find)
+"want this to work in the logoutput which is insert mode so just a map
+map <C-S-f> <Action>(Find)
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
