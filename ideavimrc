@@ -9,7 +9,6 @@ sethandler <A-R> a:vim
 sethandler <A-P> a:vim
 sethandler <C-k> a:vim
 sethandler <C-A> a:vim
-sethandler <C-S-f> a:vim
 
 inoremap jk <Esc>
 nmap U <Action>($Redo)
@@ -17,16 +16,17 @@ nmap U <Action>($Redo)
 imap <C-g> <Esc>
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
-"want this to work in the logoutput which is insert mode so just a map
-map <C-S-f> <Action>(Find)
+imap <C-f> <Action>(Find)
+
+"If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
+" This binding allows doing a search in that window.
+imap <C-s> <Action>(Find)
+vmap <C-s> <Action>(Find)
 
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
 nmap <A-v> <Action>(GotoPreviousError)
 nmap <A-b> <Action>(GotoNextError)
-
-nmap <A-n> `
-nmap <A-p> `
 
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
@@ -57,9 +57,9 @@ nmap ,l <action>(SwitchHeaderSource)
 "Replace current word with paste buffer.
 nnoremap S "_diwP
 
-nmap <A-Y> mT
-nmap <A-T> mY'T
-nmap <A-R> 'Y
+nmap <A-Y> mN
+nmap <A-N> mY'N
+nmap <A-M> 'Y
 
 "Paste latest yank (0 buffer doesn't get overwritten by a delete)
 nmap <A-P> "0p
