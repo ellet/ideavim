@@ -57,9 +57,9 @@ nmap ,l <action>(SwitchHeaderSource)
 "Replace current word with paste buffer.
 nnoremap S "_diwP
 
-nmap <A-Y> mN
-nmap <A-N> mY'N
-nmap <A-M> 'Y
+nmap <A-Y> mT
+nmap <A-T> mY'T
+nmap <A-R> 'Y
 
 "Paste latest yank (0 buffer doesn't get overwritten by a delete)
 nmap <A-P> "0p
