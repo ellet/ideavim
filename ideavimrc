@@ -14,19 +14,12 @@ sethandler <A-P> a:vim
 sethandler <C-k> a:vim
 sethandler <C-A> a:vim
 
-inoremap jk <Esc>
-nmap U <Action>($Redo)
-
-imap <C-g> <Esc>
-nmap <C-s> <Action>(SaveDocument)
-nmap <C-p> <Action>(GotoClass)
-imap <C-f> <Action>(Find)
 
 "If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
 " This binding allows doing a search in that window.
 imap <C-s> <Action>(Find)
 vmap <C-s> <Action>(Find)
->>>>>>> b09253c292fa938837e19c2fc2a6d92a619a0c63
+imap <C-f> <Action>(Find)
 
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
