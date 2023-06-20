@@ -7,7 +7,26 @@ imap <C-g> <Esc>
 sethandler <A-v> a:vim
 sethandler <A-b> a:vim
 sethandler <A-n> a:vim
+sethandler <A-p> a:vim
+sethandler <A-T> a:vim
+sethandler <A-R> a:vim
+sethandler <A-P> a:vim
 sethandler <C-k> a:vim
+sethandler <C-A> a:vim
+
+inoremap jk <Esc>
+nmap U <Action>($Redo)
+
+imap <C-g> <Esc>
+nmap <C-s> <Action>(SaveDocument)
+nmap <C-p> <Action>(GotoClass)
+imap <C-f> <Action>(Find)
+
+"If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
+" This binding allows doing a search in that window.
+imap <C-s> <Action>(Find)
+vmap <C-s> <Action>(Find)
+>>>>>>> b09253c292fa938837e19c2fc2a6d92a619a0c63
 
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
@@ -18,8 +37,6 @@ nmap <A-x> <Action>(Forward)
 nmap <A-v> <Action>(GotoPreviousError)
 nmap <A-b> <Action>(GotoNextError)
 
-nmap <A-n> `
-
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
 nmap <A-f> <Action>(GotoFile)
@@ -28,20 +45,19 @@ nmap <A-g> <Action>(GotoDeclaration)
 
 nmap <A-i> <Action>(AutoIndentLines)
 
+nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
+nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
+
 nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 
 nmap ,e <Action>(PerforceDirect.Edit)
-
-nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
-nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
-
 nmap ,Q <Action>(Debug)
 nmap ,W <Action>(CancelAllBuildActions)
 
 nmap ,f <Action>(FindUsages)
-nmap ,G <Action>(Generate)
 
+nmap ,G <Action>(Generate)
 nmap ,z <Action>(Switcher)
 
 nmap ,l <action>(SwitchHeaderSource)
@@ -64,6 +80,17 @@ nmap ,gpu <action>(Git.Pull)
 "Replace current word with paste buffer.
 nnoremap S "_diwP
 
+nmap <A-Y> mT
+nmap <A-T> mY'T
+nmap <A-R> 'Y
+
+"Paste latest yank (0 buffer doesn't get overwritten by a delete)
+nmap <A-P> "0p
+
+"Replace block with 0 buffer
+nmap ,rb dib"0P
+nmap ,rB dibb"0p
+
 "Copy to clipboard
 nnoremap ,cl "+yiw
 vnoremap ,cl "+y
@@ -76,6 +103,7 @@ nmap ,cP "+P
 "--- MacroEnd ---
 
 set NERDTree
+set surround
 
 set ignorecase smartcase
 set visualbell
