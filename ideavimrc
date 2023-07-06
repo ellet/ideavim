@@ -14,6 +14,9 @@ sethandler <A-P> a:vim
 sethandler <C-k> a:vim
 sethandler <C-A> a:vim
 
+"Focus on corser when jumping on the screen
+noremap <C-f> <C-f>zz
+noremap <C-b> <C-b>zz
 
 "If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
 " This binding allows doing a search in that window.
