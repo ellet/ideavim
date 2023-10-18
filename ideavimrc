@@ -14,6 +14,9 @@ sethandler <A-P> a:vim
 sethandler <C-k> a:vim
 sethandler <C-A> a:vim
 
+sethandler <S-F5> a:vim
+sethandler <F5> a:vim
+
 "If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
 " This binding allows doing a search in that window.
 imap <C-s> <Action>(Find)
@@ -44,7 +47,9 @@ nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 
 nmap ,e <Action>(PerforceDirect.Edit)
-nmap ,Q <Action>(Debug)
+
+nmap <s-F5> <Action>(Debug)
+nmap <F5> <Action>(Rust.Build)
 nmap ,W <Action>(CancelAllBuildActions)
 
 nmap ,f <Action>(FindUsages)
