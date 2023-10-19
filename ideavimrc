@@ -58,6 +58,7 @@ nmap ,G <Action>(Generate)
 nmap ,z <Action>(Switcher)
 
 nmap ,l <action>(SwitchHeaderSource)
+nmap R <action>(RenameElement)
 
 "--- Terminal
 nmap <C-T> <Action>(ActivateTerminalToolWindow)
