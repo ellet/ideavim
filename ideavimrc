@@ -1,88 +1,105 @@
 
+"-------------------- General Remaping --------------------
 " Escapes i've learned from other editors and now I'm broken.
 inoremap jk <Esc>
 imap <C-g> <Esc>
 
-"Make sure these are handled by VIM and not the editor
-sethandler <A-v> a:vim
-sethandler <A-b> a:vim
-sethandler <A-n> a:vim
-sethandler <A-p> a:vim
-sethandler <A-T> a:vim
-sethandler <A-R> a:vim
-sethandler <A-P> a:vim
-sethandler <C-k> a:vim
-sethandler <C-A> a:vim
 
-sethandler <S-F5> a:vim
-sethandler <F5> a:vim
-
-"If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
-" This binding allows doing a search in that window.
-imap <C-s> <Action>(Find)
-vmap <C-s> <Action>(Find)
-imap <C-f> <Action>(Find)
-
+"-------------------- General Remaping --------------------
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
 
+
+"-------------------- Navigation --------------------
 nmap <A-z> <Action>(Back)
 nmap <A-x> <Action>(Forward)
+
+sethandler <A-v> a:vim
 nmap <A-v> <Action>(GotoPreviousError)
+
+sethandler <A-b> a:vim
 nmap <A-b> <Action>(GotoNextError)
 
+nmap ,l <action>(SwitchHeaderSource)
+
+
+"-------------------- WindowControl --------------------
+nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
+nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
+
+
+"-------------------- TabControl --------------------
+nmap ,q <action>(CloseContent)
+
+
+"-------------------- Goto/Find --------------------
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
 nmap <A-f> <Action>(GotoFile)
 nmap <A-d> <Action>(GotoDeclaration)
 nmap <A-g> <Action>(GotoDeclaration)
 
-nmap <A-i> <Action>(AutoIndentLines)
+nmap ,f <Action>(FindUsages)
+nmap ,z <Action>(Switcher)
 
-nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
-nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
 
+"-------------------- TextFormating --------------------
 nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
+nmap <A-i> <Action>(AutoIndentLines)
 
-nmap ,e <Action>(PerforceDirect.Edit)
 
-nmap <s-F5> <Action>(Debug)
-nmap <F5> <Action>(Rust.Build)
-nmap ,W <Action>(CancelAllBuildActions)
-
-nmap ,f <Action>(FindUsages)
-
+"-------------------- CodeGeneration --------------------
 nmap ,G <Action>(Generate)
-nmap ,z <Action>(Switcher)
+
+
+"-------------------- BuildActions --------------------
+"to unlearn using this for build I'm mapping it to only resume.
+sethandler <F5> a:vim
+map <F5> <Action>(Resume)
 
 nmap ,l <action>(SwitchHeaderSource)
 nmap R <action>(RenameElement)
+nmap B <Action>(BuildSolutionAction)
 
-"--- Terminal
-nmap <C-T> <Action>(ActivateTerminalToolWindow)
-nmap ,t <Action>(Terminal.OpenInTerminal)
+nmap ,bd <Action>(mainRunToolbarDebugProcess)
+nmap ,br <Action>(mainRunToolbarRunProcess)
+nmap ,bc <Action>(CancelAllBuildActions)
+nmap ,bs <Action>(Stop)
 
-"--- Window stuff
-nmap ,q <action>(CloseContent)
 
-nmap ,zen <action>(ToggleDistractionFreeMode)
+"-------------------- SourceControl --------------------
+nmap ,e <Action>(PerforceDirect.Edit)
 
-"--- Git
 nmap ,ga <action>(Git.Add)
 nmap ,gg <action>(ActivateCommitToolWindow)
 nmap ,gpu <action>(Git.Pull)
 
-"--- MacroStart ---
+
+"-------------------- Terminal --------------------
+nmap <C-T> <Action>(ActivateTerminalToolWindow)
+nmap ,t <Action>(Terminal.OpenInTerminal)
+
+
+"-------------------- ViewMod --------------------
+nmap ,zen <action>(ToggleDistractionFreeMode)
+
+
+"-------------------- Bookmarks --------------------
+nmap <A-Y> mT
+sethandler <A-T> a:vim
+nmap <A-T> mY'T
+sethandler <A-R> a:vim
+nmap <A-R> 'Y
+
+
+"-------------------- Copy/Paste Macros --------------------
 "Replace current word with paste buffer.
 nnoremap S "_diwP
 
-nmap <A-Y> mT
-nmap <A-T> mY'T
-nmap <A-R> 'Y
-
 "Paste latest yank (0 buffer doesn't get overwritten by a delete)
+sethandler <A-P> a:vim
 nmap <A-P> "0p
 
 "Replace block with 0 buffer
@@ -93,20 +110,35 @@ nmap ,rB dibb"0p
 nnoremap ,cl "+yiw
 vnoremap ,cl "+y
 
+"Copy from clipboard
 nmap ,cp "+p
 nmap ,cP "+P
 
-"TODO: Make a replace regex using last deleted word
 
-"--- MacroEnd ---
+"-------------------- IdeaVim --------------------
+nmap ,ref <Action>(IdeaVim.ReloadVimRc.reload)
+"this currently doesn't seem to work
+nmap ,gref :e ~/.ideavimrc<CR>
 
+
+"-------------------- MiscFixes --------------------
+"If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
+" This binding allows doing a search in that window.
+imap <C-s> <Action>(Find)
+vmap <C-s> <Action>(Find)
+imap <C-f> <Action>(Find)
+
+
+"-------------------- Plugins/Settings --------------------
 set NERDTree
 set surround
 
 set ignorecase smartcase
 set visualbell
 set noerrorbells
+
 set incsearch
+set scrolloff=5
 set relativenumber
 set number
 set highlightedyank
