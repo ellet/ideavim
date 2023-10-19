@@ -61,10 +61,17 @@ map <F5> <Action>(Resume)
 
 nmap ,l <action>(SwitchHeaderSource)
 nmap R <action>(RenameElement)
-nmap B <Action>(BuildSolutionAction)
 
-nmap ,bd <Action>(mainRunToolbarDebugProcess)
-nmap ,br <Action>(mainRunToolbarRunProcess)
+if &ide =? 'Jetbrains rider'
+    nmap B <Action>(BuildSolutionAction)
+    nmap ,bd <Action>(mainRunToolbarDebugProcess)
+    nmap ,br <Action>(mainRunToolbarRunProcess)
+elseif &ide =? 'RustRover'
+    nmap B <Action>(Rust.Build)
+    nmap ,bd <Action>(Debug)
+    nmap ,br <Action>(Run)
+endif
+
 nmap ,bc <Action>(CancelAllBuildActions)
 nmap ,bs <Action>(Stop)
 
