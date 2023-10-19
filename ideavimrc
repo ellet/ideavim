@@ -113,7 +113,7 @@ nmap ,cP "+P
 
 "-------------------- IdeaVim --------------------
 nmap ,ref <Action>(IdeaVim.ReloadVimRc.reload)
-
+nmap ,gref :source ~/.ideavimrc<CR>
 
 "-------------------- MiscFixes --------------------
 "If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
@@ -132,6 +132,7 @@ set visualbell
 set noerrorbells
 
 set incsearch
+set scrolloff=5
 set relativenumber
 set number
 set highlightedyank
