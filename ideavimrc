@@ -55,9 +55,9 @@ nmap ,G <Action>(Generate)
 
 
 "-------------------- BuildActions --------------------
-"to unlearn using this I'm mapping it to nothing.
+"to unlearn using this for build I'm mapping it to only resume.
 sethandler <F5> a:vim
-map <F5> <Nop>
+map <F5> <Action>(Resume)
 
 nmap B <Action>(BuildSolutionAction)
 
