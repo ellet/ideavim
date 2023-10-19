@@ -21,6 +21,9 @@ nmap <A-v> <Action>(GotoPreviousError)
 sethandler <A-b> a:vim
 nmap <A-b> <Action>(GotoNextError)
 
+nmap ,l <action>(SwitchHeaderSource)
+
+
 "-------------------- WindowControl --------------------
 nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
 nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
@@ -47,14 +50,19 @@ vmap ,cc <Action>(CommentByLineComment)
 nmap <A-i> <Action>(AutoIndentLines)
 
 
-"-------------------- BuildActions --------------------
-nmap ,bd <Action>(mainRunToolbarDebugProcess)
-nmap ,bb <Action>(BuildSolutionAction)
-nmap ,W <Action>(CancelAllBuildActions)
-
+"-------------------- CodeGeneration --------------------
 nmap ,G <Action>(Generate)
 
-nmap ,l <action>(SwitchHeaderSource)
+
+"-------------------- BuildActions --------------------
+"to unlearn using this I'm mapping it to nothing.
+sethandler <F5> a:vim
+map <F5> <Nop>
+
+nmap ,bd <Action>(mainRunToolbarDebugProcess)
+nmap ,bb <Action>(BuildSolutionAction)
+nmap ,bc <Action>(CancelAllBuildActions)
+nmap ,bs <Action>(Stop)
 
 
 "-------------------- SourceControl --------------------
