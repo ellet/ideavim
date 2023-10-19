@@ -116,6 +116,7 @@ nmap ,ref <Action>(IdeaVim.ReloadVimRc.reload)
 "this currently doesn't seem to work
 nmap ,gref :e ~/.ideavimrc<CR>
 
+
 "-------------------- MiscFixes --------------------
 "If you select text in the DebuggerOutput Window then IdeaVIM is going to put you into either insert mode or visual mode
 " This binding allows doing a search in that window.
