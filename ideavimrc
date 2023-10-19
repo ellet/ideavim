@@ -59,8 +59,10 @@ nmap ,G <Action>(Generate)
 sethandler <F5> a:vim
 map <F5> <Nop>
 
+nmap B <Action>(BuildSolutionAction)
+
 nmap ,bd <Action>(mainRunToolbarDebugProcess)
-nmap ,bb <Action>(BuildSolutionAction)
+nmap ,br <Action>(mainRunToolbarRunProcess)
 nmap ,bc <Action>(CancelAllBuildActions)
 nmap ,bs <Action>(Stop)
 
