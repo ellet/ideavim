@@ -1,9 +1,31 @@
 
+"-------------------- Information --------------------
+
+" --- Finding Actions ---
+" The best way to find actions is to turn on ideavim: Track Action Ids" (do find symbols and then tab to actions)
+" This will make the text editor do a popup whenever a actions is triggered that says the name of that action.
+
+" you can also do the command :ActionList <search-term> to find them but Track action have given me greater success.
+
+" --- IDE specific binds ---
+" Todo specific bind for a specific editor you can do a if check on the ide name like this
+" if &ide =? "Name of editor"
+" [tab] specific bind
+
+" to find the name of the editor you are currently in you can do this command:
+" :echo &ide
+
+" --- SetHandler ---
+" To handle keybind conflict you can set priority for what will handle a specific press
+
+" You do a sethandler <binding> a:vim
+
+" This will make IdeaVim be the handler of the binding.
+
 "-------------------- General Remaping --------------------
 " Escapes i've learned from other editors and now I'm broken.
 inoremap jk <Esc>
 imap <C-g> <Esc>
-
 
 "-------------------- General Remaping --------------------
 nmap U <Action>($Redo)
@@ -24,15 +46,6 @@ nmap <A-b> <Action>(GotoNextError)
 nmap ,l <action>(SwitchHeaderSource)
 
 
-"-------------------- WindowControl --------------------
-nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
-nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
-
-
-"-------------------- TabControl --------------------
-nmap ,q <action>(CloseContent)
-
-
 "-------------------- Goto/Find --------------------
 nmap <A-m> <Action>(FileStructurePopup)
 nmap <A-s> <Action>(GotoSymbol)
@@ -42,6 +55,15 @@ nmap <A-g> <Action>(GotoDeclaration)
 
 nmap ,f <Action>(FindUsages)
 nmap ,z <Action>(Switcher)
+
+
+"-------------------- WindowControl --------------------
+nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
+nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
+
+
+"-------------------- TabControl --------------------
+nmap ,q <action>(CloseContent)
 
 
 "-------------------- TextFormating --------------------
@@ -54,13 +76,13 @@ nmap <A-i> <Action>(AutoIndentLines)
 nmap ,G <Action>(Generate)
 
 
+"-------------------- CodeEditing --------------------
+nmap R <action>(RenameElement)
+
 "-------------------- BuildActions --------------------
 "to unlearn using this for build I'm mapping it to only resume.
 sethandler <F5> a:vim
 map <F5> <Action>(Resume)
-
-nmap ,l <action>(SwitchHeaderSource)
-nmap R <action>(RenameElement)
 
 if &ide =? 'Jetbrains rider'
     nmap B <Action>(BuildSolutionAction)
