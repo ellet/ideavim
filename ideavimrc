@@ -1,33 +1,47 @@
 
-"-------------------- Information --------------------
+"-------------------- Intro --------------------
 
-" --- Finding Actions ---
-" The best way to find actions is to turn on ideavim: Track Action Ids" (do find symbols and then tab to actions)
-" This will make the text editor do a popup whenever a actions is triggered that says the name of that action.
+" General information at the bottom
 
-" you can also do the command :ActionList <search-term> to find them but Track action have given me greater success.
 
-" --- IDE specific binds ---
-" Todo specific bind for a specific editor you can do a if check on the ide name like this
-" if &ide =? "Name of editor"
-" [tab] specific bind
+"-------------------- Plugins/Settings --------------------
 
-" to find the name of the editor you are currently in you can do this command:
-" :echo &ide
+" Turn of error feedback for invalid inputs
+set visualbell
+set noerrorbells
 
-" --- SetHandler ---
-" To handle keybind conflict you can set priority for what will handle a specific press
+" If any letter is uppercase when searching will make the search be case sensitive.
+set smartcase
+" Search wile typing
+set incsearch
+" Highlight matching search terms
+set hlsearch
 
-" You do a sethandler <binding> a:vim
+" How close the cursor can get to the edge before the window will scroll.
+set scrolloff=10
 
-" This will make IdeaVim be the handler of the binding.
+" Show line numbers
+set number
+" Make the line numbers be relative to the cursor (Active line show actual line number)
+set relativenumber
+
+" Does a small flash that shows what text has been janked.
+set highlightedyank
+
+" Turn on allowing Vim controlls in the file browser.
+set NERDTree
+
+" Makes editing surround characters easier - Easier to change "" -> ''
+set surround
+
+" set clipboard += unnamed - Combines registers and the clipboard. Currently don't want to use it.
 
 "-------------------- General Remaping --------------------
 " Escapes i've learned from other editors and now I'm broken.
 inoremap jk <Esc>
 imap <C-g> <Esc>
 
-"-------------------- General Remaping --------------------
+"-------------------- Basics Actions --------------------
 nmap U <Action>($Redo)
 nmap <C-s> <Action>(SaveDocument)
 nmap <C-p> <Action>(GotoClass)
@@ -56,6 +70,9 @@ nmap <A-g> <Action>(GotoDeclaration)
 nmap ,f <Action>(FindUsages)
 nmap ,z <Action>(Switcher)
 
+" Clear current highlighted search
+nnoremap ,h :noh<CR>
+
 
 "-------------------- WindowControl --------------------
 nmap <S-Left> <Action>(MoveEditorToOppositeTabGroup)
@@ -66,10 +83,14 @@ nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
 nmap ,q <action>(CloseContent)
 
 
-"-------------------- TextFormating --------------------
+"-------------------- TextFormatting --------------------
 nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 nmap <A-i> <Action>(AutoIndentLines)
+
+" Stay in visual mode / keep the same selection when indenting
+vnoremap < <gv
+vnoremap > >gv
 
 
 "-------------------- CodeGeneration --------------------
@@ -158,16 +179,59 @@ vmap <C-s> <Action>(Find)
 imap <C-f> <Action>(Find)
 
 
-"-------------------- Plugins/Settings --------------------
-set NERDTree
-set surround
 
-set ignorecase smartcase
-set visualbell
-set noerrorbells
+"-------------------- Information --------------------
 
-set incsearch
-set scrolloff=5
-set relativenumber
-set number
-set highlightedyank
+" --- Finding Actions ---
+" The best way to find actions is to turn on ideavim: Track Action Ids" (do find symbols and then tab to actions)
+" This will make the text editor do a popup whenever a actions is triggered that says the name of that action.
+
+" you can also do the command :ActionList <search-term> to find them but Track action have given me greater success.
+
+" --- IDE specific binds ---
+" Todo specific bind for a specific editor you can do a if check on the ide name like this
+" if &ide =? "Name of editor"
+" [tab] specific bind
+
+" to find the name of the editor you are currently in you can do this command:
+" :echo &ide
+
+" --- SetHandler ---
+" To handle keybind conflict you can set priority for what will handle a specific press
+
+" You do a sethandler <binding> a:vim
+
+" This will make IdeaVim be the handler of the binding.
+
+"-------------------- Standard bindings --------------------
+" Some editor bindings that I'm not changing but nice to document
+
+" ----- Window panes -----
+
+" --- Rider ---
+
+" --- Writerside ---
+" A-0 - Staging window
+" A-1 - Filebrowser
+" A-2 - Bookmarks
+" A-3 - Find
+" A-4 - Run
+" A-5 - Debugger
+" A-6 - Problems
+" A-7 - Structure
+" A-8 - Services
+" A-9 - Git/SourceControl
+
+" --- PyCharm ---
+" A-0 - Staging window
+" A-1 - Filebrowser
+" A-2 - Favories/Bookmarks
+" A-3 - Find
+" A-4 - Run
+" A-5 - Debugger
+" A-6 - Problems
+" A-7 - Structure
+" A-8 - Services
+" A-9 - Git/SourceControl
+
+" --- RustRover ---
