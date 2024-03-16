@@ -126,6 +126,7 @@ nmap ,ga <action>(Git.Add)
 nmap ,gg <action>(ActivateCommitToolWindow)
 nmap ,gpu <action>(Git.Pull)
 
+map ,gi <action>(Vcs.Diff.IncludeWholeChangedLinesIntoCommit)
 
 "-------------------- Terminal --------------------
 nmap <C-T> <Action>(ActivateTerminalToolWindow)
