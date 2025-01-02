@@ -88,6 +88,9 @@ nmap ,cc <Action>(CommentByLineComment)
 vmap ,cc <Action>(CommentByLineComment)
 nmap <A-i> <Action>(AutoIndentLines)
 
+map J <action>(MoveLineDown)
+map K <action>(MoveLineUp)
+
 " Stay in visual mode / keep the same selection when indenting
 vnoremap < <gv
 vnoremap > >gv
@@ -144,6 +147,21 @@ nmap <A-T> mY'T
 sethandler <A-R> a:vim
 nmap <A-R> 'Y
 
+"-------------------- Harpooner --------------------
+nmap ,hq <action>(HarpoonerOpenFile0)
+nmap ,hw <action>(HarpoonerOpenFile1)
+nmap ,he <action>(HarpoonerOpenFile2)
+nmap ,hs <action>(HarpoonerOpenFile3)
+nmap ,hd <action>(HarpoonerOpenFile4)
+nmap ,hf <action>(HarpoonerOpenFile5)
+
+nmap <C-c> <action>(HarpoonerQuickMenu)
+nmap ,ha <action>(HarpoonerAddFile)
+
+nmap <C-x> <action>(HarpoonerNextFileAction)
+sethandler <C-x> a:vim
+nmap <C-z> <action>(HarpoonerPreviousFileAction)
+sethandler <C-z> a:vim
 
 "-------------------- Copy/Paste Macros --------------------
 "Replace current word with paste buffer.
