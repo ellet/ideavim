@@ -117,6 +117,9 @@ elseif &ide =? 'RustRover'
     nmap B <Action>(Rust.Build)
     nmap ,bd <Action>(Debug)
     nmap ,br <Action>(Run)
+elseif &ide =? 'IntelliJ IDEA Ultimate Edition'
+    nmap ,bd <Action>(Debug)
+    nmap ,br <Action>(Run)
 endif
 
 nmap ,bc <Action>(CancelAllBuildActions)
