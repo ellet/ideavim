@@ -36,6 +36,7 @@ set surround
 
 " set clipboard += unnamed - Combines registers and the clipboard. Currently don't want to use it.
 
+
 "-------------------- General Remaping --------------------
 " Escapes i've learned from other editors and now I'm broken.
 inoremap jk <Esc>
@@ -71,7 +72,7 @@ nmap ,f <Action>(FindUsages)
 nmap ,z <Action>(Switcher)
 
 " Clear current highlighted search
-nnoremap ,h :noh<CR>
+nnoremap ,ss :noh<CR>
 
 
 "-------------------- WindowControl --------------------
@@ -81,7 +82,6 @@ nmap <S-Right> <Action>(MoveEditorToOppositeTabGroup)
 
 "-------------------- TabControl --------------------
 nmap ,q <action>(CloseContent)
-
 
 "-------------------- TextFormatting --------------------
 nmap ,cc <Action>(CommentByLineComment)
@@ -102,6 +102,7 @@ nmap ,G <Action>(Generate)
 
 "-------------------- CodeEditing --------------------
 nmap R <action>(RenameElement)
+
 
 "-------------------- BuildActions --------------------
 "to unlearn using this for build I'm mapping it to only resume.
@@ -151,12 +152,16 @@ nmap <A-R> 'Y
 nmap ,hq <action>(HarpoonerOpenFile0)
 nmap ,hw <action>(HarpoonerOpenFile1)
 nmap ,he <action>(HarpoonerOpenFile2)
-nmap ,hs <action>(HarpoonerOpenFile3)
-nmap ,hd <action>(HarpoonerOpenFile4)
-nmap ,hf <action>(HarpoonerOpenFile5)
+nmap ,hr <action>(HarpoonerOpenFile3)
+nmap ,ht <action>(HarpoonerOpenFile4)
+nmap ,ha <action>(HarpoonerOpenFile5)
+nmap ,hs <action>(HarpoonerOpenFile6)
+nmap ,hd <action>(HarpoonerOpenFile7)
+nmap ,hf <action>(HarpoonerOpenFile8)
+nmap ,hg <action>(HarpoonerOpenFile9)
 
 nmap <C-c> <action>(HarpoonerQuickMenu)
-nmap ,ha <action>(HarpoonerAddFile)
+nmap ,hh <action>(HarpoonerAddFile)
 
 nmap <C-x> <action>(HarpoonerNextFileAction)
 sethandler <C-x> a:vim
