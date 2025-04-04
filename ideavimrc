@@ -109,6 +109,12 @@ nmap R <action>(RenameElement)
 sethandler <F5> a:vim
 map <F5> <Action>(Resume)
 
+sethandler <F10> a:vim
+map <F10> <Action>(StepOver)
+
+sethandler <F11> a:vim
+map <F11> <Action>(StepInto)
+
 if &ide =? 'Jetbrains rider'
     nmap B <Action>(BuildSolutionAction)
     nmap ,bd <Action>(mainRunToolbarDebugProcess)
@@ -152,16 +158,16 @@ sethandler <A-R> a:vim
 nmap <A-R> 'Y
 
 "-------------------- Harpooner --------------------
-nmap ,hq <action>(HarpoonerOpenFile0)
-nmap ,hw <action>(HarpoonerOpenFile1)
-nmap ,he <action>(HarpoonerOpenFile2)
-nmap ,hr <action>(HarpoonerOpenFile3)
-nmap ,ht <action>(HarpoonerOpenFile4)
-nmap ,ha <action>(HarpoonerOpenFile5)
-nmap ,hs <action>(HarpoonerOpenFile6)
-nmap ,hd <action>(HarpoonerOpenFile7)
-nmap ,hf <action>(HarpoonerOpenFile8)
-nmap ,hg <action>(HarpoonerOpenFile9)
+nmap ,hy <action>(HarpoonerOpenFile0)
+nmap ,hq <action>(HarpoonerOpenFile1)
+nmap ,hw <action>(HarpoonerOpenFile2)
+nmap ,he <action>(HarpoonerOpenFile3)
+nmap ,hr <action>(HarpoonerOpenFile4)
+nmap ,ht <action>(HarpoonerOpenFile5)
+nmap ,ha <action>(HarpoonerOpenFile6)
+nmap ,hs <action>(HarpoonerOpenFile7)
+nmap ,hd <action>(HarpoonerOpenFile8)
+nmap ,hf <action>(HarpoonerOpenFile9)
 
 nmap <C-c> <action>(HarpoonerQuickMenu)
 nmap ,hh <action>(HarpoonerAddFile)
